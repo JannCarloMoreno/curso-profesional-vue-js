@@ -1,9 +1,9 @@
 <template lang="pug">
   #app
-    p(v-show="showValue") {{value}}
-    p(v-if="showValue") {{value}}
-    p(v-else-if="!showValue") {{value + ' mas!...'}}
-    p(v-else) {{value + ' mas!...(lo ultimo)'}}
+    input(v-model="name")
+    p {{name}}
+
+    a(v-bind:href="url" target="_blank") link
 </template>
 
 <script>
@@ -11,9 +11,8 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Registro estación Platzi',
-      showValue: false,
-      value: 'Algo'
+      name: '',
+      url: 'http://platzi.com'
     }
   }
 }
@@ -21,74 +20,4 @@ export default {
 
 <style lang="scss">
 @import './scss/main.scss';
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
-body{
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: white;
-}
-#app{
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  height: 409px;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
-
-}
-.container{
-  display: flex;
-  flex-direction: column;
-  width: 320px;
-  height: 409px;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Roboto', sans-serif;
-  background-color: white;
-}
-img{
-  width: inherit;
-}
-h1{
-  color: #00bfd6;
-  font-weight: 700;
-  font-size: 29px;
-  width: 100%;
-  text-align: center;
-}
-form {
-  width: inherit;
-  display: inherit;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-input{
-  border: none;
-  border-bottom: 1px solid #ff9300;
-  width: 100%;
-}
-label{
-  color: #ff9300;
-  align-self: flex-start;
-  font-weight: 700;
-  font-size: 8px;
-  margin-top: 5px;
-}
-button {
-  align-self: flex-end;
-  background-color: #00bfd6;
-  color: white;
-  font-weight: bold;
-  font-size: 15px;
-  border: none;
-  border-radius: 3px;
-  width: 45%;
-  margin-top: 20px;
-  height: 40px;
-  box-shadow: 1px 1px 2px grey;
-}
-
 </style>
