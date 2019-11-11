@@ -1,17 +1,9 @@
 <template lang="pug">
   #app
-    .container
-      img(src="./assets/reto.jpg", alt="logo del formulario")
-      h1 {{msg}}
-      form(action="" method="")
-        label Nombre
-        input(type="text" name="nombre" )
-        label Apellido
-        input(type="text" name="apellido" )
-        label Cargo
-        input(type="text" name="cargo" )
-        button(type='submit') ENVIAR
-
+    p(v-show="showValue") {{value}}
+    p(v-if="showValue") {{value}}
+    p(v-else-if="!showValue") {{value + ' mas!...'}}
+    p(v-else) {{value + ' mas!...(lo ultimo)'}}
 </template>
 
 <script>
@@ -19,7 +11,9 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Registro estación Platzi'
+      msg: 'Registro estación Platzi',
+      showValue: false,
+      value: 'Algo'
     }
   }
 }
